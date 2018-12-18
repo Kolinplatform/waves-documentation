@@ -8,7 +8,7 @@ _**La plataforma Waves es una cadena de bloques que se caracteriza por poseer **
 * [_**Contratos inteligentes**_](/technical-details/waves-contracts-language-description.md) incluyendo control de cuenta y token, que proporcionan funcionalidad para implementar características como carteras múltifirma, intercambios atómicos y autorización de 2 factores.
 * Proporciona los servicios de lanzamiento, distribución y comercio de tokens \(creación, emisión, transferencia, intercambio de activos y tokens personalizados o fiat tokens\).
 * El problema fiat-cripto se resuelve a través de [_**Puertas de enlace fiat integradas en Waves**_](/waves-client/wallet-management.md).
-* [_**protocolo Waves-NG**_](/platform-features/waves-ng-protocol.md) que aumentan considerablemente la capacidad de TPS procesadas debido a que los mineros ya no compiten para verificar las transacciones
+* [_**Protocolo Waves-NG**_](/platform-features/waves-ng-protocol.md) que aumentan considerablemente la capacidad de TPS procesadas debido a que los mineros ya no compiten para verificar las transacciones
 * [_**Leased Proof-of-Stake\(LPoS\)**_](/platform-features/leased-proof-of-stake-lpos.md) algoritmo para encontrar un consenso distribuido.
 
 
