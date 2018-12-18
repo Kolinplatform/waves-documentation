@@ -1,15 +1,15 @@
-# What is Waves Platform
+# Que es la Waves Platform?
 
-_**Waves Platform is a comprehensive blockchain platform that features **_[_**fiat gateways**_](/waves-client/wallet-management.md)_**, **_[_**smart contracts**_](/technical-details/waves-contracts-language-description.md)_**, **_[_**mobile wallet**_](/waves-client/mobile-apps.md)_**, **_[_**token issuance**_](/waves-client/assets-management.md)_**, a **_[_**DEX \(decentralized exchange\)**_](/waves-client/waves-dex.md)_**, and more.**_
+_**La plataforma Waves es una cadena de bloques que se caracteriza por poseer **_[_**puertas de enlace fiat**_](/waves-client/wallet-management.md)_**, **_[_**contratos inteligentes**_](/technical-details/waves-contracts-language-description.md)_**, **_[_**billetera para telefonos**_](/waves-client/mobile-apps.md)_**, **_[_**emision de tokens**_](/waves-client/assets-management.md)_**, a **_[_**DEX \(intercambio decentralizado\)**_](/waves-client/waves-dex.md)_**, y mucho más.**_
 
-## Main Waves Features
+## Características principales de Waves
 
-* [_**Fully functional exchange**_](/platform-features/decentralized-cryptocurrency-exchange-dex.md) that is as fast as a centralized one but does not suffer from the same security issues.
-* [_**Smart contracts**_](/technical-details/waves-contracts-language-description.md) include account and token controls, which provide functionality to implement features such as multi-signature wallets, atomic swaps and 2-factor authorization.
-* It provides the services of launching, distributing and trading crypto token \(creation, issuance, transfer, exchange of assets and custom or fiat tokens\).
-* The fiat-crypto problem is solved through [_**Waves fiat gateways**_](/waves-client/wallet-management.md).
-* [_**Waves-NG protocol**_](/platform-features/waves-ng-protocol.md) which greatly increases TPS capacity because miners no longer compete to verify transactions.
-* [_**Leased Proof-of-Stake\(LPoS\)**_](/platform-features/leased-proof-of-stake-lpos.md) algorithm to find a distributed consensus.
+* [_**Intercambio totalmente funcional**_](/platform-features/decentralized-cryptocurrency-exchange-dex.md) que es tan rápido como un intercambio centralizado pero sin los mismos problemas de seguridad.
+* [_**Contratos inteligentes**_](/technical-details/waves-contracts-language-description.md) incluyendo control de cuenta y token, que proporcionan funcionalidad para implementar características como carteras múltifirma, intercambios atómicos y autorización de 2 factores.
+* Proporciona los servicios de lanzamiento, distribución y comercio de tokens \(creación, emisión, transferencia, intercambio de activos y tokens personalizados o fiat tokens\).
+* El problema fiat-crypto se resuelve a través de [_**Puertas de enlace fiat integradas en Waves**_](/waves-client/wallet-management.md).
+* [_**protocolo Waves-NG**_](/platform-features/waves-ng-protocol.md) que aumentan considerablemente la capacidad de TPS procesadas debido a que los mineros ya no compiten para verificar las transacciones
+* [_**Leased Proof-of-Stake\(LPoS\)**_](/platform-features/leased-proof-of-stake-lpos.md) algoritmo para encontrar un consenso distribuido.
 
 
-{% prettyhint type="info" %} If you're a new reader, please check our <a href="/overview/how-to-use-this-guide.md"> &nbsp;DOCUMENTATION GUIDE </a> {% endprettyhint %}
+{% prettyhint type="info" %} Si es un lector nuevo, consulte nuestra <a href="/overview/how-to-use-this-guide.md"> &nbsp;GUÍA DE DOCUMENTACIÓN </a> {% endprettyhint %}
