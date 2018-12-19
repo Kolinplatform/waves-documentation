@@ -63,7 +63,7 @@ La descripción de cada activo consta de varias entradas de datos, la primera es
 
 Tabla 1. Estado de Tokens 
 
-| Estado | Descripción | Comentar
+| Estado | Descripción | Comentar |
 | : --- | : --- | : --- |
 | 2 | Verificado| Activos verificados y de confianza, los emisores pasaron KYC, tokens de puertas de enlaces oficiales, etc.
 | 1 | Descrito | Fichas con descripción clara que no son phishing o estafa |
