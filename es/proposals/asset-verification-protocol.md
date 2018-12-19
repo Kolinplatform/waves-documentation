@@ -65,10 +65,10 @@ Tabla 1. Estado de Tokens
 
 | Estado | Descripción | Comentar |
 | : --- | : --- | : --- |
-| 2 | Verificado| Activos verificados y de confianza, los emisores pasaron KYC, tokens de puertas de enlaces oficiales, etc.
+| 2 | Verificado| Activos verificados y de confianza, los emisores pasaron KYC, tokens de puertas de enlaces oficiales, etc. |
 | 1 | Descrito | Fichas con descripción clara que no son phishing o estafa |
 | 0 | Desconocido | Estado por defecto. No es necesario agregarlo a la lista de proveedores a menos que el proveedor quiera eliminar un activo de la lista |
-| -1 | Sospechoso | El activo parece sospechoso o usado para spam
+| -1 | Sospechoso | El activo parece sospechoso o usado para spam |
 | -2 | Peligroso | Fraudes peligrosos y activos de phishing |
 
 {
