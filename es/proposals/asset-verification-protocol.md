@@ -71,6 +71,7 @@ Tabla 1. Estado de Tokens
 | -1 | Sospechoso | El activo parece sospechoso o usado para spam |
 | -2 | Peligroso | Fraudes peligrosos y activos de phishing |
 
+```
 {
   "sender": "3FjTpAg1VbmxSH39YWnfFukAUhxMqmKqTEZ", 
   "data": [ {
