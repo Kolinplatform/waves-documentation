@@ -1,21 +1,20 @@
-# Waves Keeper API
+# API del Waves Keeper 
 
-[Download](https://drive.google.com/drive/folders/1m4dD4C8pEJ4y6-hpauF9TGSIsevY-3me?usp=sharing)
+[Descargar](https://drive.google.com/drive/folders/1m4dD4C8pEJ4y6-hpauF9TGSIsevY-3me?usp=sharing)
 
-[Demo page](https://chrome-ext.wvservices.com/)
+[Pagina del Demo](https://chrome-ext.wvservices.com/)
 
-Note that the Waves Keeper also can support [Waves Client API](https://docs.wavesplatform.com/en/development-and-api/client-api/overview.html): [Web Auth API](https://docs.wavesplatform.com/en/development-and-api/client-api/auth-api.html), [Payment API](https://docs.wavesplatform.com/en/development-and-api/client-api/payments-api.html). If a user has both of Waves Client and Waves Keeper, the Keeper would have higher priority.
+Tenga en cuenta que el Waves Keeper también puede soportar [API del Waves Client](https://docs.wavesplatform.com/en/development-and-api/client-api/overview.html): [API de autorizacion Waves](https://docs.wavesplatform.com/en/development-and-api/client-api/auth-api.html), [API de Pago](https://docs.wavesplatform.com/en/development-and-api/client-api/payments-api.html). Si un usuario tiene tanto el Cliente Waves como el Waves Keeper, el Keeper tendra mayor prioridad.
  
-Firstly, for working with API, you need to add a public object Waves on your site. In this object the following functions are available.
+En primer lugar, para trabajar con la API, debe agregar un objeto público denominado Waves en su sitio. En este objeto están disponibles las siguientes funciones.
 
 
-
-## Authentication
-For working with a concrete account you need to implement authentication via Waves function:
+## Autenticación
+Para trabajar con una cuenta concreta, necesita implementar la autenticación a través de la función Waves:
 
 `auth(AUTH_DATA)`
 
-where `AUTH_DATA` is a json the following form:
+donde`AUTH_DATA` es un json en la siguiente forma:
 
 ```
 AUTH_DATA {
@@ -26,7 +25,7 @@ AUTH_DATA {
 }
 ```
 
-An example request might look like:
+Una solicitud de ejemplo podría verse como:
 
 ```
 Waves.auth({
@@ -41,20 +40,21 @@ Waves.auth({
 
 
 
-## Sign Transaction
+## Firmar Transaccion
 
-This function only generates a signature for the transaction but doesn't send it to the node. You can get a Promise object for self-sending to the node
+Esta función solo genera una firma para la transacción, pero no la envía al nodo. Puede obtener un objeto "Promise" para autoenviar al nodo.
 
 `signTransaction(TRANSACTION)`
 
-The full request is:
+La solicitud completa es:
 
 `Waves.signTransaction(TRANSACTION): Promise<tx>;`
 
 
-The example of `TRANSACTION` you can find below.
+Un ejemplo de `TRANSACTION` puede ser encontrado a continuacion.
 
-An example of a request to signing a transfer transaction:
+ 
+Un ejemplo de una solicitud para firmar una transacción de transferencia:
 
 ```
 Waves.signTransaction({
@@ -77,17 +77,17 @@ data: {
 
 ```
 
-## Sign and Publish Transaction
+## Firmar y publicar una transacción
 
-This function signs transaction, send it to the node and return a Promise object with the server response. The full request is:
+Esta función firma la transacción, la envía al nodo y devuelve un objeto Promise con la respuesta del servidor. La solicitud completa es:
 
 `Waves.signAndPublishTransaction(TRANSACTION): Promise<tx>;`
 
-The example of `TRANSACTION` you can find below. 
-Also there can be optional parameter `successPath` : `Waves.signAndPublishTransaction(TRANSACTION, successPath): Promise<tx>;`,
-this parameter can redirect user to some URL if the transaction is successfully sent with `?txId={id};` 
+Un ejemplo do `TRANSACTION` se encuentra a continuacion. 
+También puede haber un parámetro opcional `successPath` : `Waves.signAndPublishTransaction(TRANSACTION, successPath): Promise<tx>;`,
+este parámetro puede redirigir al usuario a alguna URL si la transacción se envía con éxito `?txId={id};` 
 
-An example of a request to signing a transfer transaction:
+Un ejemplo de una solicitud para firmar una transacción de transferencia:
 ```
 Waves.signAndPublishTransaction({
   type: 4,
@@ -108,9 +108,9 @@ Waves.signAndPublishTransaction({
 )
 ```
 
-## Sign Request
+## Solicitud de firma
 
-This function returns signature of data. The full request is:
+Esta función devuelve la firma de los datos. La solicitud completa es:
 
 `Waves.signRequest(SIGN_REQUEST_DATA)`.
 
@@ -127,18 +127,16 @@ REQUEST_TYPE {
 }
 ```
 
-## Sign Order
+## Orden de firma
 
-This function returns signature of order's data. It signs data and returns a Promise object for self-sending to the matcher.
-
-The full request is:
+Esta función devuelve la firma de los datos solicitados. Firma los datos y devuelve un objeto Promise para autoenviar al matcher.
+La solicitud completa es:
 
 `Waves.signOrder(SIGN_ORDER_DATA)`.
 
-## Sign and Publish Order
+## Firmar y publicar orden
 
-This function signs the order, send it to the matcher and return a Promise object with the server response. The full request is:
-
+Esta función firma el pedido, lo envía al comparador y devuelve un objeto Promise con la respuesta del servidor. La solicitud completa es:
 `Waves.signAndPublishOrder(SIGN_ORDER_DATA)`
 ```
 SIGN_ORDER_DATA  {
@@ -163,17 +161,17 @@ SIGN_ORDER_DATA  {
 }
 ```
 
-## Sign Cancel Order
+## Firmar cancelar orden
 
-This function returns signature of order cancel data. It signs data and returns a Promise object for self-sending to the matcher.
+Esta función devuelve la firma de los datos de cancelación del pedido. Firma los datos y devuelve un objeto Promise para autoenviar al matcher.
 
-The full request is:
+La solicitud completa es:
 
 `Waves.signCancelOrder(SIGN_CANCEL_ORDER_DATA)`.
 
-## Sign and Publish Cancel Order
+## Firmar y publicar una orden de cancelacion
 
-This function signs the order cancel, send it to the matcher and return a Promise object with the server response. The full request is:
+Esta función firma el pedido de cancelación, lo envía al emparejador y devuelve un objeto Promesa con la respuesta del servidor. La solicitud completa es:
 
 `Waves.signAndPublishCancelOrder(SIGN_CANCEL_ORDER_DATA)`.
 ```
@@ -186,9 +184,9 @@ SIGN_CANCEL_ORDER_DATA  {
 ```
 
 
-### General TRANSACTION structure
+### Estructura general de "TRANSACTION"
 
-A `TRANSACTION` in general is a json string in the following form:
+Una `TRANSACTION` en generak es una strin json de la siguiente forma:
 
 ```
 TRANSACTION  {
@@ -199,8 +197,8 @@ successPath: string,
 }
 }
 ```
-### Transaction Types
-Waves transaction can be one of 14 types (1 - is Genesis transaction):
+### Tipos de transacciones
+Las transacciones en Waves pueden ser de 14 tipos (1 - es la transaccion genesis):
 ```
 TRANSACTION_TYPE_NUMBER {
    SEND_OLD = 2,
@@ -219,11 +217,11 @@ TRANSACTION_TYPE_NUMBER {
 }
 ```
 
-### Transaction Data
+### Datos de la transacción
 
-A `TRANSACTION_DATA` contains information about the transaction with json in standard Waves transaction format for different transaction types:
+Una `TRANSACTION_DATA` contiene información sobre la transacción en un json con el formato estandar de para diferentes tipos de transacciones en Waves:
 
-**Transfer:**
+**Transferencia:**
 ```
 {
   amount: {
@@ -239,7 +237,7 @@ A `TRANSACTION_DATA` contains information about the transaction with json in sta
 ```
 
 
-**Issure:**
+**Emitir:**
 ```
 {
   fee: {
@@ -254,7 +252,7 @@ A `TRANSACTION_DATA` contains information about the transaction with json in sta
 }
 ```
 
-**Reissure:**
+**Re-emitir:**
 ```
 {
   fee: {
@@ -267,7 +265,7 @@ A `TRANSACTION_DATA` contains information about the transaction with json in sta
 }
 ```
 
-**Burn:**
+**Quemar:**
 ```
 {
   fee: {
@@ -280,7 +278,7 @@ A `TRANSACTION_DATA` contains information about the transaction with json in sta
 }
 ```
 
-**Lease:**
+**Arrendar:**
 ```
 {
   fee: {
@@ -292,7 +290,7 @@ A `TRANSACTION_DATA` contains information about the transaction with json in sta
 }
 ```
 
-**Cancel Lease:**
+**Cancelar arriendo:**
 ```
 {
   fee: {
@@ -303,7 +301,7 @@ A `TRANSACTION_DATA` contains information about the transaction with json in sta
 }
 ```
 
-**Mass Transfer:**
+**Transferencia Masiva:**
 ```
 {
   fee: {
@@ -325,7 +323,7 @@ A `TRANSACTION_DATA` contains information about the transaction with json in sta
 }
 ```
 
-**Data transaction:**
+**Transacción de datos:**
 ```
 {
   fee: {
@@ -341,7 +339,7 @@ A `TRANSACTION_DATA` contains information about the transaction with json in sta
 }
 ```
 
-**Sponsorship:**
+**Patrocinio:**
 ```
 {
   fee: {
@@ -355,7 +353,7 @@ A `TRANSACTION_DATA` contains information about the transaction with json in sta
 }
 ```
 
-**Set Script:**
+**Establecer Script:**
 ```
 {
   fee: {
