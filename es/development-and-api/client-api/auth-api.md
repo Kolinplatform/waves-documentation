@@ -1,4 +1,4 @@
-# Waves Auth API
+# API de autorizacion de Waves 
 
 Si quieres autorizar a un usuario en tu servicio utilizando su cuenta Waves, aqui esta la solucion. En general, el ususario debe ser redireccionado al cliente oficial de Waves \([https://client.wavesplatform.com/](https://client.wavesplatform.com/)\) junto a ciertos parametros incluyendo la informacion ha ser firmada por el usuario.
 
