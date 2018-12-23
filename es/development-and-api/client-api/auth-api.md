@@ -1,10 +1,10 @@
 # Waves Auth API
 
-Si quieres autorizar a un usuario en tu servicio utilizando su cuenta Waves, aqui esta la solucion. En general, deberias redireccionar al usuario al cliente oficial de Waves \([https://client.wavesplatform.com/](https://client.wavesplatform.com/)\) con ciertos parametros incluyendo informacion para que el usuario firme.
+Si quieres autorizar a un usuario en tu servicio utilizando su cuenta Waves, aqui esta la solucion. En general, el ususario debe ser redireccionado al cliente oficial de Waves \([https://client.wavesplatform.com/](https://client.wavesplatform.com/)\) junto a ciertos parametros incluyendo la informacion ha ser firmada por el usuario.
 
-Esto puede ser necesario en casos cuando necesites trabajar con datos personales del usuario y para estar seguro que una cuenta en la  blockchain pertenezca a ese usuario.
+Esto puede ser necesario en casos cuando se necesite trabajar con datos personales del usuario y tambien para estar seguro que una cuenta en la  blockchain pertenece a ese usuario.
 
-## Process
+## Proceso
 
 1. Agregas el widget de Waves Auth en tu website.
 2. El usuario entra a tu sitio y desea iniciar sesión con su cuenta Waves.
@@ -21,7 +21,7 @@ Si el usuario interrumpe el proceso, permanece en la página del Cliente Waves.
 
 Debido a las limitaciones de longitud de la string de consulta, todos los parámetros se expresan con un solo carácter.
 
-[**Aquí**](https://demo.wavesplatform.com) you can find the demo project which shows how to use Web auth API.
+[**Aquí**](https://demo.wavesplatform.com) pueses encontrar una demo  mostrando el uso de la Web auth API.
 
 ### Solicitud
 
