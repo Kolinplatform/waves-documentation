@@ -1,7 +1,7 @@
-# Client API
+# API del Cliente
 
-[WAVES Beta client](install-waves-client.md) offers few additional APIs, which can be used in your real world applications.
-There APIs help to integrate WAVES into your product like many other 3rd party providers. Currently there are two available APIs:
+[Beta del cliente WAVES](install-waves-client.md) ofrece algunas APIs adicionales, las cuales pueden ser utilizadas en tus aplicaciones del mundo real.
+Estas APIs ayudan a integrar Waves en tu producto como en muchos otros proveedores de servicios. Actualmente existen dos APIs disponibles:
 
-1. [Web Auth API](auth-api.md)
-2. [Payment API](payments-api.md)
+1. [API de autorizacion web](auth-api.md)
+2. [API de pago](payments-api.md)
