@@ -1,17 +1,17 @@
-## Private Functions
+## Funciones Privadass
 
-All private functions below require API Key to be provided in every HTTP request using`X-Api-Key`header. The default value is`ridethewaves!`. Securely hashed header value is stored in`rest-api.api-key-hash`setting in the waves.conf configuration file. See [/utils/hash/secure](https://github.com/wavesplatform/Waves/wiki/Waves-Node-REST-API#post-utilshashsecure) for more information on how to obtain a secure hash.
+Todas las funciones privadas aqui explicadas requieren una clave API en cada HTTP requerida utilizando el encabezado `X-Api-Key`. El parametro por defecto es`ridethewaves!`. El valor de encabezado asegurado mediante hash es almacenado en la configuracion del `rest-api.api-key-hash` en el archivo de configuracion waves.conf. Ver [/utils/hash/secure](https://github.com/wavesplatform/Waves/wiki/Waves-Node-REST-API#post-utilshashsecure) Para obtener más información sobre cómo obtener un hash seguro.
 
-### POST /assets/issue
+### POST /asset/ emision
 
-Issue a new Asset for an address that exists in the node's wallet.
+Emitir un nuevo activo para una dirección que existe en la cartera del nodo.
 
-**Request params:**
+**Solicitar parametros:**
 
-    The same as in [Broadcast Issue Assets] besides `senderPublicKey`, `timestamp` and `signature` params.
-    "sender" - Sender account's address that exists in the node's wallet, Base58-encoded
+    Lo mismo que en [Broadcast Issue Assets] ademas de los parametros `senderPublicKey`, `timestamp` y `signature` .
+    "sender" - Dirección de la cuenta del remitente existente en el nodo, codificado mediante Base58
 
-**Request JSON example:**
+**Ejemplo de solicitud JSON:**
 
 ```js
 {
@@ -25,13 +25,13 @@ Issue a new Asset for an address that exists in the node's wallet.
 }
 ```
 
-**Response params:**
+**Parametros de Respuesta:**
 
 ```
-The same as in [Broadcast Issue Assets]
+Lo mismo que en [Broadcast Issue Assets]
 ```
 
-**Response JSON example:**
+**Ejemplo de respuesta JSON:**
 
 ```
 The same as in [Broadcast Issue Assets]
@@ -39,14 +39,14 @@ The same as in [Broadcast Issue Assets]
 
 ### POST /assets/reissue
 
-Re-issue an additional quantity of the Asset
+Volver a emitir una cantidad adicional del Activo
 
-**Request params:**
+**Solicitar parametros:**
 
-    The same as in [Broadcast Reissue Assets] besides `senderPublicKey`, `timestamp` and `signature` params.
-    "sender" - Sender account's address that exists in the node's wallet, Base58-encoded
+    Lo mismo que en [Broadcast Reissue Assets] ademas de los parametros `senderPublicKey`, `timestamp` y `signature`.
+    "sender" - Dirección de la cuenta del remitente existente en el nodo, codificado mediante Base58
 
-**Request JSON example:**
+**Ejemplo de solicitud JSON:**
 
 ```js
 {
@@ -58,32 +58,32 @@ Re-issue an additional quantity of the Asset
 }
 ```
 
-**Response params:**
+**Parametros de respuesta:**
 
 ```
-The same as in [Broadcast Reissue Assets]
+Lo mismo que en [Broadcast Reissue Assets]
 ```
 
-**Response JSON example:**
+**Ejemplo de respuesta JSON:**
 
 ```
-The same as in [Broadcast Reissue Assets]
+Lo mismo que en [Broadcast Reissue Assets]
 ```
 
 ### POST /assets/burn
 
-Burn quantity of the Asset.
+Quemar cierta cantidad del activo.
 
-**Request params:**
+**Parametros de solicitud:**
 
 ```
-"assetId" - Asset ID previously issued, Base58-encoded
-"sender" - Sender address, Base58-encoded
-"fee" - Transaction fee for Asset issue, min = 100000
-"amount" - amount of asset'lets to burn (number of indivisible pieces of assets)
+"assetId" - ID de activo previamente emitido, codificado en Base58
+"sender" - Dirección del remitente, codificada en base58
+"fee" - Tarifa de transacción por emisión de activos, minimo = 100000
+"amount" - Cantidad de activos para quemar (número de piezas indivisibles de activos)
 ```
 
-**Request JSON example:**
+**Ejemplo de solicitud JSON:**
 
 ```js
 {
@@ -94,7 +94,7 @@ Burn quantity of the Asset.
 }
 ```
 
-**Response JSON example:**
+**Ejemplo de respuesta JSON:**
 
 ```js
 {
@@ -112,14 +112,14 @@ Burn quantity of the Asset.
 
 ### POST /assets/transfer
 
-Create transaction to transfer assets from one address to another.
+Crear transacción para transferir activos de una dirección a otra.
 
-**Request params:**
+** Parámetros de solicitud: **
 
-    The same as in [Broadcast Transfer Assets] besides `senderPublicKey`, `timestamp` and `signature` params.
-    "sender" - Sender account's address that exists in the node's wallet, Base58-encoded
+    Lo mismo que en [Broadcast Transfer Assets] ademas de los parametros `senderPublicKey`, `timestamp` y `signature`.
+    "sender" - Dirección de la cuenta del remitente existente en el nodo, codificado mediante Base58
 
-**Request JSON example:**
+**Ejemplo de solicitud JSON:**
 
 ```js
 {
@@ -132,36 +132,36 @@ Create transaction to transfer assets from one address to another.
 }
 ```
 
-**Response params:**
+**Parametros de Respuesta:**
 
 ```
-The same as in [Broadcast Transfer Assets]
+Lo mismo que en [Broadcast Transfer Assets]
 ```
 
-**Response JSON example:**
+**Ejemplo de respuesta JSON:**
 
 ```
-The same as in [Broadcast Transfer Assets]
+Lo mismo que en [Broadcast Transfer Assets]
 ```
 
 ### POST /assets/masstransfer
 
-Create transaction to transfer an asset to several recipient addresses at once.
+Crear una transacción para transferir un activo a varias direcciones de destinatarios a la vez.
 
-**Request params:**
+**Solicitar parametros:**
 
 ```
-"version" - Currently 1
-"sender" - Sender address, Base58-encoded
-"assetId" - ID of the asset to send. By default, WAVES is assumed.
-"transfers" - list of (recipient, amount) pairs where
-   "recipient" is a Base58 address, and
-   "amount" is the amount to send to that address.
-"fee" - Transaction fee, by default 100000 + 50000 * (number of transfers)
-"attachment" - Arbitrary message, Base58 encoded, 140 bytes max.
+"version" - Actualmente 1
+"sender" - Dirección del remitente, codificada en base58
+"assetId" - ID del activo a enviar. Por defecto, se supone WAVES.
+"transfers" - listado en pares (destinatarios, cantidad)  donde:
+   "recipient" es una dirección codificada en Base58, y
+   "amount" es la cantidad a enviar a esa dirección.
+"fee" - Tarifa de transacción, por defecto 100000 + 50000 * (número de transferencias)
+"attachment" - Mensaje arbitrario, codificado en Base58, de 140 bytes máx.
 ```
 
-**Request JSON example:**
+**Ejemplo de solicitud JSON:**
 
 ```js
 {
@@ -180,7 +180,7 @@ Create transaction to transfer an asset to several recipient addresses at once.
 }
 ```
 
-**Response JSON example:**
+**Ejemplo de respuesta JSON:**
 
 ```js
 {
@@ -205,18 +205,18 @@ Create transaction to transfer an asset to several recipient addresses at once.
 
 ### POST /assets/make-asset-name-unique
 
-Create transaction to make asset name unique.
+Crear transacción para hacer el nombre de activo único .
 
 **Request params:**
 
 ```
-"assetId" - Asset ID previously issued, Base58-encoded
-"sender" - Sender address, Base58-encoded
-"fee" - Transaction fee for Asset issue, min = 100000
-"networkByte" - network byte ('W' - 87 - mainnet, 'T' - 84 - testnet)
+"assetId" - ID de activo previamente emitido, codificado en Base58
+"sender" - Dirección del remitente, codificada en base58
+"fee" - Tarifa de transacción por emisión de Activos, min = 100000
+"networkByte" - byte de red ('W' - 87 - mainnet, 'T' - 84 - testnet)
 ```
 
-**Request JSON example:**
+**Ejemplo de solicitud JSON:**
 
 ```js
 {
@@ -231,7 +231,7 @@ Create transaction to make asset name unique.
     "networkByte" : 73
 ```
 
-**Response JSON example:**
+**Ejemplo de respuesta JSON:**
 
 ```js
 {
