@@ -1,4 +1,4 @@
-## Funciones Privadass
+## Funciones Privadas
 
 Todas las funciones privadas aqui explicadas requieren una clave API en cada HTTP requerida utilizando el encabezado `X-Api-Key`. El parametro por defecto es`ridethewaves!`. El valor de encabezado asegurado mediante hash es almacenado en la configuracion del `rest-api.api-key-hash` en el archivo de configuracion waves.conf. Ver [/utils/hash/secure](https://github.com/wavesplatform/Waves/wiki/Waves-Node-REST-API#post-utilshashsecure) Para obtener más información sobre cómo obtener un hash seguro.
 
