@@ -1,41 +1,41 @@
-# Language description
+# Descripcion del Lenguaje
 
-Waves smart contracts language is:
+El lenguaje de contratos inteligentes de Waves es:
 
-* Lazy
-* Strong typed
-* Statically typed
-* Expression-based.
+* Flojo
+* Tipeado fuerte
+* Tipeado estadistico
+* Basada en la expresion.
 
-## Operations and constructs
+## Operaciones y construcciones.
 
-* Binary operations:`>=`, `>`, `<`, `<=`, `+`, `-`, `&&`, `||`, `*`, `%`, `/`, `==`, `!=`
-* Unary operations `-`, `!`
-* Constants declaration via `let`
-* `if-then-else` clause
-* Accessing fields of any instances within predefined structures by `.`
-* Accessing list element by index `[]`
-* Calls of predefined functions by `()`
+* Operaciones Binarias:`>=`, `>`, `<`, `<=`, `+`, `-`, `&&`, `||`, `*`, `%`, `/`, `==`, `!=`
+* Operaciones unarias `-`, `!`
+* Declaraciones de constantes via `let`
+* Clausula `if-then-else` 
+* Acceder a campos de cualquier instancia dentro de estructuras predefinidas por `.`
+* Acceder a elementos de lista mediante índice `[]`
+* Llamadas de funciones predefinidas mediante `()`
 
-## Available data types
+## Tipos de datos disponibles
 
 * `Long`
 * `String`
 * `Boolean`
 * `ByteVector`
 * `List[T]`
-* Predefined non-recursive data structure like `Transaction` and `Block`.
-* `Unit` - a type which has only one instance, `unit`.
-* `Nothing`- "bottom type", no instance of this type can exist, but it can be applied on any other type.
-* Union types, like `Int | String | Transaction` and `ByteVector | Unit`
+* Estructura de datos predefinidos no recursivos tales como `Transaction` y `Block`.
+* `Unit` - un tipo que tiene una sola instancia, `unit`.
+* `Nothing`- "tipo inferior", no puede existir ninguna instancia de este tipo, pero puede aplicarse a cualquier otro tipo.
+* Tipos de unión, como `Int | String | Transaction` y `ByteVector | Unit`
 
-### Structures
+### Estructuras
 
 * `Point(x: Int, y: Int)`
 * `Alias(name: String)`
 
-Defining user structures are restricted in RIDE.  
-You can create instance of any pre-defined structure by calling the constructor.
+La definición de estructuras de usuario está restringida en RIDE.  
+Puede crear una instancia de cualquier estructura predefinida llamando al constructor.
 
 ```js
 let addr = Address(base58'3My3KZgFQ3CrVHgz6vGRt8687sH4oAA1qp8')
@@ -43,16 +43,16 @@ let alias = Alias("alicia")
 let name  = alias.name
 ```
 
-### List\[T\]
+### Lista\[T\]
 
-The user can't create `List[T]` instances but he can input data which contains some `List[T]` fields. All transactions contain field `proofs: List[ByteVector]` but MassTransfer transactions contain field `transfers: List[Transfer]`.
+El usuario no puede crear `List[T]` pero él puede introducir datos que contiene algunos campos de`List[T]` . Todas las transacciones contienen campo `proofs: List[ByteVector]` pero las transacciones de transferencia masiva contienen campo `transfers: List[Transfer]`.
 
-To access lists element you can use syntax `list[index]` with the first element at index 0.
+Para acceder al elemento de listas puedes usar la sintaxis `list[index]` con el primer elemento en index 0.
 
-To determinate count of list elements, you can use function `size`:
+Para determinar el recuento de elementos de la lista, puede utilizar la función `size`:
 
 * `size`: `List[T] => Long`
-  This is also true as well for `DataType.ByteArray`:
+  Esto también es cierto para `DataType.ByteArray`:
 * `size`: `DataType.ByteArray => Long`
 
 ### ByteVector
