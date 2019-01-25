@@ -1,6 +1,6 @@
 # ¿Qué es la Platforma Waves?
 
-_**La plataforma Waves es una cadena de bloques que se caracteriza por poseer **_[_**puertas de enlace fiat**_](/waves-client/wallet-management.md)_**, **_[_**contratos inteligentes**_](/technical-details/waves-contracts-language-description.md)_**, **_[_**billetera para moviles**_](/waves-client/mobile-apps.md)_**, **_[_**emision de tokens**_](/waves-client/assets-management.md)_**, a **_[_**DEX \(intercambio decentralizado\)**_](/waves-client/waves-dex.md)_**, y mucho más.**_
+_**La plataforma Waves es una cadena de bloques que se caracteriza por poseer **_[_**puertas de enlace fiat**_](/waves-client/wallet-management.md)_**, **_[_**contratos inteligentes**_](/technical-details/waves-contracts-language-description.md)_**, **_[_**billetera para moviles**_](/waves-client/mobile-apps.md)_**, **_[_**emision de tokens**_](/waves-client/assets-management.md)_**, un **_[_**DEX \(intercambio decentralizado\)**_](/waves-client/waves-dex.md)_**, y mucho más.**_
 
 ## Características principales de Waves
 
