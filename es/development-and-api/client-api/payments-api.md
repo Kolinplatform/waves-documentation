@@ -1,58 +1,59 @@
-# Waves Payments API
+# API de pagos Waves
 
-If you want to make someone pay with WAVES or any other Waves tokens, you can use our Payments API.
+Si desea que alguien pague con WAVES o con cualquier otro token de Waves, puede utilizar nuestra API de pagos.
 
-## Process
+## Proceso
 
-1. You need to set up a button on your site which triggers the creation of an URL and a redirect to it.
-2. A user decides to buy something and the user presses that button.
-3. After that, the user is redirected to the Waves Client with a payment parameters window.
-4. The user modifies those parameters if possible and submits the form.
-5. If everything's okay, The user is redirected back to referer.
-6. Referer is provided with transaction ID which can be checked if it's in the blockchain.
+1. Debe configurar un botón en su sitio que active la creación de una URL y redirigir hacia ella.
+2. Un usuario decide comprar algo y el usuario presiona ese botón.
+3. Después de eso, el usuario se redirige al Cliente Waves con una ventana con parámetros de pago.
+4. El usuario modifica esos parámetros si es posible y envía el formulario.
+5. Si todo está bien, el usuario es redirigido de nuevo al remitente.
+6. Se proporciona al remitente un ID de la transacción que puede verificarse si está en el blockchain.
 
-If the user interrupts the process, he stays on the Waves Client page.
+Si el usuario interrumpe el proceso, el usuario permanece en la página del Cliente Waves.
 
-## Details
+## Detalles
 
-[**Here**](https://demo.wavesplatform.com/payment-api) you can find the demo project which shows how to use Payment API for donations. The Payment API allows creating a special link for avoiding users' seed input on 3-party sites.
+[** Aquí **](https://demo.wavesplatform.com/payment-api) puede encontrar el proyecto de demostración que muestra cómo usar la API de pago para las donaciones. La API de pago permite crear un enlace especial para evitar la entrada de semillas en sitios de terceros.
 
-### Request
 
-[Example](https://client.wavesplatform.com/#send/WAVES?recipient=your-alias&amount=0.01&attachment=SomeString&referrer=https://example.com&strict): `https://client.wavesplatform.com/#send/WAVES?recipient=your-alias&amount=0.01&attachment=SomeString&referrer=https://example.com&strict`.
+### Solicitud
 
-Basic path is `https://client.wavesplatform.com/#send/{assetId}`. Then there are the parameters.
+[Ejemplo](https://client.wavesplatform.com/#send/WAVES?recipient=your-alias&amount=0.01&attachment=SomeString&referrer=https://example.com&strict): `https://client.wavesplatform.com/#send/WAVES?recipient=your-alias&amount=0.01&attachment=SomeString&referrer=https://example.com&strict`.
 
-#### Asset ID
+La ruta basica es `https://client.wavesplatform.com/#send/{assetId}`. Luego están los parámetros.
 
-`/#send/8LQW8f7P5d5PZM7GtZEBgaqRPGSzS3DfPuiXrURJ4AJS` — the ID of the asset needed for the payment. The only path parameter here. _\(Required\)_
+#### ID del activo
 
-#### Recipient
+`/#send/8LQW8f7P5d5PZM7GtZEBgaqRPGSzS3DfPuiXrURJ4AJS` — el ID del activo necesario para el pago. El único parámetro de ruta aquí. _\(Requerido\)_
 
-`?recipient=3PCAB4sHXgvtu5NPoen6EXR5yaNbvsEA8Fj` — the address \(or an alias\) to send tokens to. 
+#### Recipiente
 
-#### Amount
+`?recipient=3PCAB4sHXgvtu5NPoen6EXR5yaNbvsEA8Fj` — la dirección \(o un alias \) para enviar los tokens. 
 
-`?amount=10.5` — the number of tokens to pay. _\(Required\)_
+#### Cantidad
 
-#### Attachment
+`?amount=10.5` —  el número de fichas a pagar. _\(Requerido\)_
 
-`?attachment=SomeString` — payment attachment string. _\(Optional\)_
+#### Datos adjuntos
 
-#### Referrer
+`?attachment=SomeString` — String adjunto de pago. _\(Opcional\)_
 
-`?referrer=https://example.com/waves-payment` — the URL of your service. It should be HTTPS-only. _\(Optional\)_
+#### Referente
 
-#### Strict mode
+`?referrer=https://example.com/waves-payment` — URL de su servicio. Debe ser solo para HTTPS. _\(Opcional\)_
 
-`?strict` — if this flag is set, a user won't be able to change the data in the form. _\(Optional\)_
+#### Modo estricto
 
-### Response
+`?strict` — si se establece esta bandera, un usuario no podrá cambiar los datos en el formulario. _\(Opcional\)_
+
+### Respuesta
 
 Example: `https://example.com/waves-payment?txId=D1USZfZPzVd2XNH9xj52Z81XhxChpwUKDJpQHz2haXRT`.
 
-The ID of the user's payment transaction will be in the query.
+El ID de la transacción de pago del usuario estará en la consulta.
 
-#### Transaction ID
+#### ID de la transacción
 
-`?txId=D1USZfZPzVd2XNH9xj52Z81XhxChpwUKDJpQHz2haXRT` — the ID of user's successful transaction.
+`?txId=D1USZfZPzVd2XNH9xj52Z81XhxChpwUKDJpQHz2haXRT` — el ID de la transacción exitosa del usuario.
