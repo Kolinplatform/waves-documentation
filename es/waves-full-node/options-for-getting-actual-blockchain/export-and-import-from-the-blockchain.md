@@ -1,67 +1,68 @@
-# Export and Import From The Blockchain
+#  Exportar e Importar desde el Blockchain
 
-**Note:** This functionality available since version 0.8.
+**Nota:** Esta funcionalidad está disponible desde la versión 0.8.
 
-## Export Existing Blocks to a Binary File {#user-content-export-existing-blocks-to-a-binary-file}
+## Exportar bloques existentes a un archivo binario {#user-content-export-existing-blocks-to-a-binary-file}
 
-**Note:** You have to stop the node before starting export of blocks.
+**Nota:** Debe detener el nodo antes de iniciar la exportación de bloques.
 
-To export existing blockchain to the binary file run following command. Export is quite a fast operation, but resulting binary file could additionally take up to 1/3 of `data` folder size on disk.
+Para exportar el blockchain existente al archivo binario ejecute el siguiente comando. La exportación es una operación bastante rápida, pero el archivo binario resultante también puede llevar hasta 1/3 del tamaño de la carpeta `data` en el disco.
 
-On Windows:
-
-```
-java -cp waves-all-<version>.jar com.wavesplatform.Exporter [configuration-file-name] [output-file-name] [height]
-```
-
-On Linux:
+En Windows:
 
 ```
-Mainnet: sudo -u waves exporter /etc/waves/waves.conf [output-file-name] [height]
-Testnet: sudo -u waves-testnet exporter-testnet /etc/waves-testnet/waves.conf [output-file-name] [height]
+java -cp waves-all-<version>.jar com.wavesplatform.Exporter [nombre-archivo-configuracion] [nombre-archivo-salida] [altura(height)]
 ```
 
-If the parameter `height` was not given all blocks will be exported. Otherwise, only blocs up to the `height` will be exported to the output file.
+En Linux:
 
-The output file name parameter is optional, name 'blockchain' is used by default. As a result, a file named '&lt;output-file-name&gt;-&lt;height&gt;' will be created in the current folder.
+```
+Mainnet: sudo -u waves exporter /etc/waves/waves.conf [nombre-archivo-salida] [altura(height)]
+Testnet: sudo -u waves-testnet exporter-testnet /etc/waves-testnet/waves.conf [nombre-archivo-salida] [altura(height)]
+```
 
-## Remove the Existing Node's Data
 
-In order to fully rebuild the node's state, you have to remove the existing node's `data` folder.  
-On Windows, `data` folder usually located in `%HOMEPATH%\waves\data`.
+Si el parámetro `altura(height)` no fue dado, todos los bloques serán exportados. De lo contrario, solo se exportarán al archivo de salida los bloques hasta la altura.
 
-On Linux it's in the `/var/lib/waves[-testnet]/` folder:
+El parámetro de nombre de archivo de salida es opcional, el nombre 'blockchain' se usa por defecto. Como resultado, un archivo llamado '&lt;nombre-archivo-salida&gt;-&lt;height&gt;' Se creará en la carpeta actual.
+
+## Eliminar los datos del nodo existente
+
+Para reconstruir completamente el estado del nodo, debe eliminar la carpeta `data` del nodo existente.  
+En Windows, la carpeta `data` normalmente se encuentra en `%HOMEPATH%\waves\data`.
+
+En Linux está en la carpeta `/var/lib/waves[-testnet]/` folder:
 
 ```
 sudo rm -rdf /var/lib/waves[-testnet]/data
 ```
 
-## Import Blocks From The Binary File {#user-content-import-blocks-from-the-binary-file}
+## Importar bloques del archivo binario {#user-content-import-blocks-from-the-binary-file}
 
-**Note:** The node must be stopped before importing the blockchain.
+**Nota:** El nodo debe detenerse antes de importar el blockchain.
 
-**Note:** If you already have some data in the node's `data` folder, the import will continue to append new data from the blockchain's binary file. So, you might be willing to remove the existing data. Please be careful while appending data, mixing data from different versions can lead to an erroneous state.
+**Nota:** Si ya tiene algunos datos en la carpeta `data` del nodo, la importación continuará agregando datos nuevos del archivo binario de la cadena de bloques. Por lo tanto, podría estar dispuesto a eliminar los datos existentes. Tenga cuidado al agregar datos, la mezcla de datos de diferentes versiones puede llevar a un estado erróneo.
 
-To import the blockchain and rebuild the state run the following command.
+Para importar la cadena de bloques y reconstruir el estado, ejecute el siguiente comando.
 
-On Windows:
+En Windows:
 
 ```
 java -cp waves-all-<version>.jar com.wavesplatform.Importer [configuration-file-name] [binary-file-name]
 ```
 
-On Linux:
+En Linux:
 
 ```
 Mainnet: sudo -u waves importer /etc/waves/waves.conf [binary-file-name]
 Testnet: sudo -u waves-testnet importer-testnet /etc/waves-testnet/waves.conf [binary-file-name]
 ```
 
-Import is a heavy operation and could take a few hours to complete.
+La importación es una operación pesada y puede tardar unas horas en completarse.
 
-## Downloading Exported Blockchain
+## Descargando Blockchain exportado
 
-You can download recently exported blockchains using following links:
+Puedes descargar blockchains exportados recientemente usando los siguientes enlaces:
 
 * TestNet: [http://blockchain.testnet.wavesnodes.com/](http://blockchain.testnet.wavesnodes.com/)
 * MainNet: [http://blockchain.wavesnodes.com/](http://blockchain.wavesnodes.com/)
